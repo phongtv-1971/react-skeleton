@@ -19,14 +19,14 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jest": "^24.4.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
     "husky": "^8.0.1",
     "lint-staged": "^11.1.1",
     "prettier": "^2.3.2"
@@ -38,17 +38,10 @@
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "eslint src --ext .ts,.tsx --max-warnings 0 --fix",
-    "prettier:fix": "yarn prettier:fix:ts",
-    "prettier:fix:ts": "prettier 'src/**/*.{ts,tsx}' --parser typescript --write",
-    "format": "yarn lint:fix && yarn prettier:fix:ts",
+    "prettier:fix": "prettier 'src/**/*.{ts,tsx}' --parser typescript --write",
+    "format": "yarn lint:fix && yarn prettier:fix",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
